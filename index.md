@@ -34,3 +34,5 @@ license: ""
 ## The content goes here :)
 
 <!--more-->
+
+1. [Dobre praktyki](dobre-praktyki.md)
