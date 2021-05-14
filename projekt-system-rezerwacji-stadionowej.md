@@ -30,6 +30,7 @@ Jako składniki obiekt powinien mieć
 - spis osób (klasy Person) 
 - rozkład wszystkich miejsc na stadionie (pochodnych klasy seat zgodnie ze standardem danego miejsca). Implementacja powinna zawierać trzy vectory zawierane w sobie które domyślnie zapełniają się wolnymi obiektami klas zgodnie z przyjętym schematem. Kazde miejsce powinno być ponumerowane zaczynajac od 1 (zawierać swoje ID).
 - Tzw. Black list czyli listę osób z zakazem stadionowym które nie mogą dokonać rezerwacji miejsca.
+
 Dodatkowo jest do zaimplementowania funkcjonalność backupu - odczytu i zapisu danych do pliku który automatycznie wypełni miejsca według przypisanych do personaliów miejsc z pliku (parsowanie dowolne ;) może być JSON ale tez własne jeżeli ktoś ma już stworzony jakiś ciekawy parser i podłączy go do repozyitorium jako submodule). W dalszych wersjach rozwoju numer paszportu powinien być przechowywany w pliku jako zahashowany. Ewentualnie całkowita migracja do bazy danych SQL lub mongoDB ;)
 
 ### Moduł seat
