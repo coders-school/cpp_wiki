@@ -12,11 +12,11 @@ Główna pętla programu przyjmująca od użytkownika dane wejściowe operacji n
 - 1. Rezerwuj miejsce, 
 - 2. Anuluj rezerwacje, 
 - 3. Zamień miejscami, 
-- 4. Pokaz tylko wolne miejsca, 
-- 4. Wyszukaj miejsce po personaliach 
-- 5. Znajdź osobę 
-- 6. Import danych z pliku 
-- 7. Zapis do pliku. 
+- 4. Rezerwuj następne wolne miejsce, 
+- 4. Wyszukaj miejsce po personaliach,
+- 5. Znajdź osobę,
+- 6. Import danych z pliku,
+- 7. Zapis do pliku,
 - 8. Wyjście z programu
 
 W module tym należało by zaprogramować system interakcji który będzie reagował na polecone mu zadania i odsyłał do odpowiednich funkcji. System powinien być odporny na niepoprawne dane np. Stringi zamiast liczby oraz zwracać komunikat błędu gdy zostanie podana liczba która nie ma przypisanej operacji. Po każdej wykonanej akcji powinno zostać wykonane przeładowanie widoku w klasie stadium.
@@ -28,8 +28,9 @@ Np. [S] [S] :S: [V] :V: :V: [V]
 
 Jako składniki obiekt powinien mieć
 - spis osób (klasy Person) 
-- rozkład wszystkich miejsc na stadionie (pochodnych klasy seat zgodnie ze standardem danego miejsca). Implementacja powinna zawierać trzy vectory zawierane w sobie które domyślnie zapełniają się wolnymi obiektami klas zgodnie z przyjętym schematem. Kazde miejsce powinno być ponumerowane zaczynajac od 1 (zawierać swoje ID).
+- rozkład wszystkich miejsc na stadionie (pochodnych klasy seat zgodnie ze standardem danego miejsca). Implementacja powinna zawierać trzy vectory zawierane w sobie które domyślnie zapełniają się wolnymi obiektami(smart pointerami) klas pochodnych zgodnie z przyjętym schematem. Kazde miejsce powinno być ponumerowane zaczynajac od 1 (zawierać swoje ID).
 - Tzw. Black list czyli listę osób z zakazem stadionowym które nie mogą dokonać rezerwacji miejsca.
+- Mapę pozwalająca zdefiniować ceny dla danej klasy miejsc.
 
 Dodatkowo jest do zaimplementowania funkcjonalność backupu - odczytu i zapisu danych do pliku który automatycznie wypełni miejsca według przypisanych do personaliów miejsc z pliku (parsowanie dowolne ;) może być JSON ale tez własne jeżeli ktoś ma już stworzony jakiś ciekawy parser i podłączy go do repozyitorium jako submodule). W dalszych wersjach rozwoju numer paszportu powinien być przechowywany w pliku jako zahashowany. Ewentualnie całkowita migracja do bazy danych SQL lub mongoDB ;)
 
@@ -42,4 +43,9 @@ Dla klasy VIP cena to 1000zl, dla klasy Disabled cena to 250zl, a dla klasy Stan
  Obiekt powinien zawierać imię, nazwisko, liczbę posiadanych miejsc, nr telefonu, e-mail, numer paszportu Polsatu (dla przykładu zamiast numeru pesel) oraz czy dany człowiek był szczepiony na COVID. 
 
 
-Wstępna wersja demonstracyjna obejmuje ubogą implementacje do rozbudowy. Link do kodu wkrótce.
+Wstępna wersja demonstracyjna obejmuje ubogą implementacje do rozbudowy. 
+
+Link do kodu:
+https://github.com/piotrku91/stadium-system-res
+
+Zapraszam do forkowania, dyskusji i rozbudowy ;)
