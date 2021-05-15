@@ -1,7 +1,7 @@
 ### Projekt: System rezerwacji stadionowej. ###
 
 Dla celów rozwojowych w Coders School jako zadanie poboczne.
-Szkic v0.1
+Szkic v0.12. 
 
 Załóżmy ze mamy stadion z trybunami rozmieszczonymi na 3 piętrach. Na każdym pietrze jest 5 rzędów po 30 krzesełek. W tym w pierwszym rzędach każdego poziomu mamy miejsca VIP (od 10 do 20) a na skrajnych 5 krzesłach drugich rzędów każdego piętra miejsca dla niepełnosprawnych. Reszta to miejsca standard. Celem projektu jest stworzenia systemu rezerwacji miejsc z graficzna interpretacja (w konsoli ;)).
 Projekt podzieliłem na moduły i rozpocząłem wstępne szkice jak mniej więcej mogłoby to wygadać.
@@ -20,11 +20,28 @@ Główna pętla programu przyjmująca od użytkownika dane wejściowe operacji n
 - 8. Wyjście z programu
 
 W module tym należało by zaprogramować system interakcji który będzie reagował na polecone mu zadania i odsyłał do odpowiednich funkcji. System powinien być odporny na niepoprawne dane np. Stringi zamiast liczby oraz zwracać komunikat błędu gdy zostanie podana liczba która nie ma przypisanej operacji. Po każdej wykonanej akcji powinno zostać wykonane przeładowanie widoku w klasie stadium.
+Funkcje od 1-3 powinny mieć możliwość wskazania danego siedzenia za pomocą dwóch opcji: 
+- unikalny ID siedzenia
+- współrzędne siedzenia
+oraz po uruchomieniu takiej operacji wyświetlić graficznie o jakie miejsce chodzi i zapytać o potwierdzenie.
 
+Np. 
+>
+
+     Czy anulować rezerwacje miejsca o numerze ID 5 (2,2). 
+     [S] | [S]
+      - {S} -
+     [S] | [S]
+
+Pamiętamy ze numerujemy wszystko od 1 ;)
 
 ### Moduł stadium
- Główny obiekt zarządzający stadionem. Jego najważniejsza funkcja jest graficzne przedstawienie wolnych (reloadView) , zajętych miejsc oznaczonych odpowiednimi standardami. V - miejsce VIP, D - miejsce dla niepełnosprawnych, S - miejsce standard. Miejsca wolne powinny być wyświetlane jako objęte kwadratowymi nawiasami za to zajęte przez : .
-Np. [S] [S] :S: [V] :V: :V: [V]
+ Główny obiekt zarządzający stadionem. Jego najważniejsza funkcja jest graficzne przedstawienie wolnych (reloadView) , zajętych miejsc oznaczonych odpowiednimi standardami. V - miejsce VIP, D - miejsce dla niepełnosprawnych, S - miejsce standard. Miejsca wolne powinny być wyświetlane jako objęte kwadratowymi nawiasami za to zajęte przez : 
+Np.
+> 
+     
+     [S] [S] [S] [S] [S] [S] [S]
+     [S] [S] :S: [V] :V: :V: [V]
 
 Jako składniki obiekt powinien mieć
 - spis osób (klasy Person) 
@@ -36,16 +53,16 @@ Dodatkowo jest do zaimplementowania funkcjonalność backupu - odczytu i zapisu 
 
 ### Moduł seat
 Klasa seat powinna być dziedziczona dla poszczególnych typów siedzien i domyślnie mieć inne cechy jak nazwa i cena miejsca. 
-Dla klasy VIP cena to 1000zl, dla klasy Disabled cena to 250zl, a dla klasy Standard cena to 370zl. Siedzenia powinny być łączone funkcja reserveSeat() z dana osoba i wpisywać do składnika TicketOwner tylko wskaźnik do danej osoby (obiektu Person z listy osób). Funkcja ta powinna zwracać powodzenie lub porażkę takowej akcji. Np. False gdy osoba jest na czarnej liście lub nie była szczepiona na COVID. Po wykonaniu takowej operacji obiekt stadium powinien wykonać przeładowanie widoku by pokazać czy coś się zmieniło czy nie. W celu sprawdzenia czy miejsce jest zajęte czy nie funkcja isBusy() powinna zwracać prawdę jeżeli miejsce jest zajęte i fałsz jeżeli jest wolne (sprawdzenie czy TicketOwner zawiera jakiś niepusty wskaźnik)
+Dla klasy VIP cena to 1000zl, dla klasy Disabled cena to 250zl, a dla klasy Standard cena to 370zl. Siedzenia powinny być łączone funkcja reserveSeat() z dana osoba i wpisywać do składnika TicketOwner tylko wskaźnik do danej osoby (obiektu Person z listy osób). Funkcja ta powinna zwracać powodzenie lub porażkę takowej akcji. Np. False gdy osoba jest na czarnej liście, nie była szczepiona na COVID lub nie ma skończonych 18 lat. Po wykonaniu takowej operacji obiekt stadium powinien wykonać przeładowanie widoku by pokazać czy coś się zmieniło czy nie. W celu sprawdzenia czy miejsce jest zajęte czy nie funkcja isBusy() powinna zwracać prawdę jeżeli miejsce jest zajęte i fałsz jeżeli jest wolne (sprawdzenie czy TicketOwner zawiera jakiś niepusty wskaźnik)
 
 
 ### Moduł Person
- Obiekt powinien zawierać imię, nazwisko, liczbę posiadanych miejsc, nr telefonu, e-mail, numer paszportu Polsatu (dla przykładu zamiast numeru pesel) oraz czy dany człowiek był szczepiony na COVID. 
+ Obiekt powinien zawierać imię, nazwisko, liczbę posiadanych miejsc, nr telefonu, e-mail, numer dokumentu w formacie np. MXM900303 (dla przykładu zamiast numeru pesel. Numer po literce to data urodzenia) oraz czy dany człowiek był szczepiony na COVID. Funkcja getAge() powinna zwracać wiek osoby na podstawie numeru paszportu.
 
 
 Wstępna wersja demonstracyjna obejmuje ubogą implementacje do rozbudowy. 
 
-Link do kodu:
+## Link do kodu:
 https://github.com/piotrku91/stadium-system-res
 
-Zapraszam do forkowania, dyskusji i rozbudowy ;)
+### Zapraszam do forkowania, dyskusji i rozbudowy ;)
