@@ -1,7 +1,7 @@
 ### Projekt: System rezerwacji stadionowej. ###
 
 Dla celów rozwojowych w Coders School jako zadanie poboczne.
-Szkic v0.12. 
+Szkic v0.13.
 
 Załóżmy ze mamy stadion z trybunami rozmieszczonymi na 3 piętrach. Na każdym pietrze jest 5 rzędów po 30 krzesełek. W tym w pierwszym rzędach każdego poziomu mamy miejsca VIP (od 10 do 20) a na skrajnych 5 krzesłach drugich rzędów każdego piętra miejsca dla niepełnosprawnych. Reszta to miejsca standard. Celem projektu jest stworzenia systemu rezerwacji miejsc z graficzna interpretacja (w konsoli ;)).
 Projekt podzieliłem na moduły i rozpocząłem wstępne szkice jak mniej więcej mogłoby to wygadać.
@@ -35,13 +35,15 @@ Np.
 
 Pamiętamy ze numerujemy wszystko od 1 ;)
 
-### Moduł stadium
- Główny obiekt zarządzający stadionem. Jedna z jego najważniejszych funkcji jest graficzne przedstawienie wolnych (reloadView), zajętych miejsc oznaczonych odpowiednimi standardami. V - miejsce VIP, D - miejsce dla niepełnosprawnych, S - miejsce standard. Miejsca wolne powinny być wyświetlane jako objęte kwadratowymi nawiasami za to zajęte przez : 
+Funkcja reloadView() to graficzne przedstawienie wolnych (reloadView), zajętych miejsc oznaczonych odpowiednimi standardami. V - miejsce VIP, D - miejsce dla niepełnosprawnych, S - miejsce standard. Miejsca wolne powinny być wyświetlane jako objęte kwadratowymi nawiasami za to zajęte przez : 
 Np.
 > 
      
      [S] [S] [S] [S] [S] [S] [S]
      [S] [S] :S: [V] :V: :V: [V]
+
+### Moduł stadium
+ Główny obiekt zarządzający stadionem. Powinien zawierać najważniejsze funkcje i być całkowicie rozłączny aby w miarę potrzeby można go przenieść do innego projektu np. Podmienić konsole na GUI.
 
 Jako składniki obiekt powinien mieć
 - spis osób (klasy Person) 
