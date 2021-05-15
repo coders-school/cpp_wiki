@@ -1,7 +1,7 @@
 ### Projekt: System rezerwacji stadionowej. ###
 
 Dla celów rozwojowych w Coders School jako zadanie poboczne.
-Szkic v0.13.
+Szkic v0.14.
 
 Załóżmy ze mamy stadion z trybunami rozmieszczonymi na 3 piętrach. Na każdym pietrze jest 5 rzędów po 30 krzesełek. W tym w pierwszym rzędach każdego poziomu mamy miejsca VIP (od 10 do 20) a na skrajnych 5 krzesłach drugich rzędów każdego piętra miejsca dla niepełnosprawnych. Reszta to miejsca standard. Celem projektu jest stworzenia systemu rezerwacji miejsc z graficzna interpretacja (w konsoli ;)).
 Projekt podzieliłem na moduły i rozpocząłem wstępne szkice jak mniej więcej mogłoby to wygadać.
@@ -20,9 +20,11 @@ Główna pętla programu przyjmująca od użytkownika dane wejściowe operacji n
 - 8. Wyjście z programu
 
 W module tym należało by zaprogramować system interakcji który będzie reagował na polecone mu zadania i odsyłał do odpowiednich funkcji. System powinien być odporny na niepoprawne dane np. Stringi zamiast liczby oraz zwracać komunikat błędu gdy zostanie podana liczba która nie ma przypisanej operacji. Po każdej wykonanej akcji powinno zostać wykonane przeładowanie widoku w klasie stadium.
+
 Funkcje od 1-3 powinny mieć możliwość wskazania danego siedzenia za pomocą dwóch opcji: 
 - unikalny ID siedzenia
 - współrzędne siedzenia
+
 oraz po uruchomieniu takiej operacji wyświetlić graficznie o jakie miejsce chodzi i zapytać o potwierdzenie.
 
 Np. 
@@ -59,7 +61,10 @@ Dla klasy VIP cena to 1000zl, dla klasy Disabled cena to 250zl, a dla klasy Stan
 
 
 ### Moduł Person
- Obiekt powinien zawierać imię, nazwisko, liczbę posiadanych miejsc, nr telefonu, e-mail, numer dokumentu w formacie np. MXM900303 (dla przykładu zamiast numeru pesel. Numer po literce to data urodzenia) oraz czy dany człowiek był szczepiony na COVID. Funkcja getAge() powinna zwracać wiek osoby na podstawie numeru paszportu.
+Obiekt powinien zawierać imię, nazwisko, liczbę posiadanych miejsc, nr telefonu, e-mail, numer dokumentu w formacie np. MXM900303 (dla przykładu zamiast numeru pesel. Numer po literce to data urodzenia) oraz czy dany człowiek był szczepiony na COVID. Funkcja getAge() powinna zwracać wiek osoby na podstawie numeru paszportu.
+ 
+### Moduł Log
+Obiekt powinien logować wszystkie wydarzenia wykonane przez system i dopisywać to do pliku o nazwie z aktualną datą w folderze logs/
 
 
 Wstępna wersja demonstracyjna obejmuje ubogą implementacje do rozbudowy. 
