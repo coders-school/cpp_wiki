@@ -36,7 +36,7 @@ Np.
 Pamiętamy ze numerujemy wszystko od 1 ;)
 
 ### Moduł stadium
- Główny obiekt zarządzający stadionem. Jego najważniejsza funkcja jest graficzne przedstawienie wolnych (reloadView) , zajętych miejsc oznaczonych odpowiednimi standardami. V - miejsce VIP, D - miejsce dla niepełnosprawnych, S - miejsce standard. Miejsca wolne powinny być wyświetlane jako objęte kwadratowymi nawiasami za to zajęte przez : 
+ Główny obiekt zarządzający stadionem. Jedna z jego najważniejszych funkcji jest graficzne przedstawienie wolnych (reloadView), zajętych miejsc oznaczonych odpowiednimi standardami. V - miejsce VIP, D - miejsce dla niepełnosprawnych, S - miejsce standard. Miejsca wolne powinny być wyświetlane jako objęte kwadratowymi nawiasami za to zajęte przez : 
 Np.
 > 
      
