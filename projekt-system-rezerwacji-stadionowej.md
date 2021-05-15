@@ -1,7 +1,7 @@
 ### Projekt: System rezerwacji stadionowej. ###
 
 Dla celów rozwojowych w Coders School jako zadanie poboczne.
-Szkic v0.14c.
+Szkic v0.15.
 
 Załóżmy ze mamy stadion z trybunami rozmieszczonymi na 3 piętrach. Na każdym pietrze jest 5 rzędów po 30 krzesełek. W tym w pierwszym rzędach każdego poziomu mamy miejsca VIP (od 10 do 20) a na skrajnych 5 krzesłach drugich rzędów każdego piętra miejsca dla niepełnosprawnych. Reszta to miejsca standard. Celem projektu jest stworzenia systemu rezerwacji miejsc z graficzna interpretacja (w konsoli ;)).
 Projekt podzieliłem na moduły i rozpocząłem wstępne szkice jak mniej więcej mogłoby to wyglądać.
@@ -17,7 +17,9 @@ Główna pętla programu przyjmująca od użytkownika dane wejściowe operacji n
 - 5. Znajdź osobę,
 - 6. Import danych z pliku,
 - 7. Zapis do pliku,
-- 8. Wyjście z programu
+- 8. Eksport do pliku HTML
+- 9. Wyjście z programu
+
 
 W module tym należało by zaprogramować system interakcji który będzie reagował na polecone mu zadania i odsyłał do odpowiednich funkcji. System powinien być odporny na niepoprawne dane np. Stringi zamiast liczby oraz zwracać komunikat błędu gdy zostanie podana liczba która nie ma przypisanej operacji. Po każdej wykonanej akcji powinno zostać wykonane przeładowanie widoku za pomocą funkcji reloadView().
 
@@ -37,7 +39,9 @@ Np.
 
 Pamiętamy ze numerujemy wszystko od 1 ;)
 
-Funkcja reloadView() to graficzne przedstawienie wolnych, zajętych miejsc oznaczonych odpowiednimi standardami. V - miejsce VIP, D - miejsce dla niepełnosprawnych, S - miejsce standard. Miejsca wolne powinny być wyświetlane jako objęte kwadratowymi nawiasami za to zajęte przez : 
+Funkcja reloadView() to graficzne przedstawienie wolnych, zajętych miejsc oznaczonych odpowiednimi standardami. V - miejsce VIP, D - miejsce dla niepełnosprawnych, S - miejsce standard.
+Miejsca wolne powinny być wyświetlane jako objęte kwadratowymi nawiasami za to zajęte przez : 
+
 Np.
 > 
      
@@ -47,7 +51,7 @@ Np.
 Dodatkowo powinna wyświetlać ilość zajętych miejsc, ilość wolnych miejsc sumarycznie ogółem oraz osobno dla każdej klasy.
 
 ### Moduł stadium
- Główny obiekt zarządzający stadionem. Powinien zawierać najważniejsze funkcje i być całkowicie rozłączny aby w miarę potrzeby można go przenieść do innego projektu np. Podmienić konsole na GUI.
+ Główny obiekt zarządzający stadionem. Powinien zawierać najważniejsze funkcje i być całkowicie rozłączny aby w miarę potrzeby można go przenieść do innego projektu np. Podmienić konsole na GUI lub dostęp przez API.
 
 Jako składniki obiekt powinien mieć
 - spis osób (klasy Person) 
@@ -55,7 +59,7 @@ Jako składniki obiekt powinien mieć
 - Tzw. Black list czyli listę osób z zakazem stadionowym które nie mogą dokonać rezerwacji miejsca.
 - Mapę pozwalająca zdefiniować ceny dla danej klasy miejsc.
 
-Dodatkowo jest do zaimplementowania funkcjonalność backupu - odczytu i zapisu danych do pliku który automatycznie wypełni miejsca według przypisanych do personaliów miejsc z pliku (parsowanie dowolne ;) może być JSON ale tez własne jeżeli ktoś ma już stworzony jakiś ciekawy parser i podłączy go do repozyitorium jako submodule). W dalszych wersjach rozwoju numer paszportu powinien być przechowywany w pliku jako zahashowany. Ewentualnie całkowita migracja do bazy danych SQL lub mongoDB ;)
+Dodatkowo jest do zaimplementowania funkcjonalność backupu - odczytu i zapisu danych do pliku który automatycznie wypełni miejsca według przypisanych do miejsc osób z pliku znajdującego się w folderze data/ (parsowanie dowolne ;) może być JSON ale tez własne jeżeli ktoś ma już stworzony jakiś ciekawy parser i podłączy go do repozyitorium jako submodule). W dalszych wersjach rozwoju numer paszportu powinien być przechowywany w pliku jako zahashowany. Można także rozważyć binarny zapis obiektu do pliku. Ewentualnie całkowita migracja do bazy danych SQL lub mongoDB ;)
 
 ### Moduł seat
 Klasa seat powinna być dziedziczona dla poszczególnych typów siedzien i domyślnie mieć inne cechy jak nazwa i cena miejsca. 
@@ -69,7 +73,7 @@ Obiekt powinien zawierać imię, nazwisko, liczbę posiadanych miejsc, nr telefo
 Obiekt powinien logować wszystkie wydarzenia wykonane przez system i dopisywać to do pliku o nazwie z aktualną datą w folderze logs/
 
 ### Podsumowanie
-Wstępna wersja demonstracyjna obejmuje ubogą implementacje do rozbudowy. 
+Wstępna wersja demonstracyjna obejmuje ubogą implementacje do rozbudowy. Jestem otwarty na zmianę koncepcji i naukę nowych rozwiązań więc jeśli masz jakiś ciekawy pomysł to pisz śmiało ;););)
 
 ## Link do kodu:
 https://github.com/piotrku91/stadium-system-res
