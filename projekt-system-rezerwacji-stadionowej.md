@@ -13,10 +13,10 @@ Główna pętla programu przyjmująca od użytkownika dane wejściowe operacji n
 - 2. Anuluj rezerwacje, 
 - 3. Zamień miejscami, 
 - 4. Rezerwuj następne wolne miejsce, 
-- 4. Wyszukaj miejsce po personaliach,
-- 5. Znajdź osobę,
-- 6. Import danych z pliku,
-- 7. Zapis do pliku,
+- 4. Wyszukaj miejsca po personaliach,
+- 5. Dodaj osobę do listy / czarnej listy
+- 6. Znajdź osobę / Edytuj / Usuń 
+- 7. Odczyt / Zapis do pliku,
 - 8. Eksport do pliku HTML
 - 9. Wyjście z programu
 
