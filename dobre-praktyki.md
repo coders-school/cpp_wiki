@@ -173,7 +173,7 @@ Zasada jest taka: Jeżeli masz plik example.cpp i inludujesz jego header #includ
 
 ```cpp
 // Here is place for header
-#include "example.h"
+#include "example.hpp"
 
 // Here is place for standard library
 #include <algorithm>

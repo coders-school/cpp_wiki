@@ -1,11 +1,9 @@
-### Projekt: System rezerwacji stadionowej. ###
+## Projekt: System rezerwacji stadionowej.
 
 Dla celów rozwojowych w Coders School jako zadanie poboczne.
-Szkic v0.15.
 
 Załóżmy ze mamy stadion z trybunami rozmieszczonymi na 3 piętrach. Na każdym pietrze jest 5 rzędów po 30 krzesełek. W tym w pierwszym rzędach każdego poziomu mamy miejsca VIP (od 10 do 20) a na skrajnych 5 krzesłach drugich rzędów każdego piętra miejsca dla niepełnosprawnych. Reszta to miejsca standard. Celem projektu jest stworzenia systemu rezerwacji miejsc z graficzna interpretacja (w konsoli ;)).
 Projekt podzieliłem na moduły i rozpocząłem wstępne szkice jak mniej więcej mogłoby to wyglądać.
-
 
 ### Moduł menu
 Główna pętla programu przyjmująca od użytkownika dane wejściowe operacji np. 
@@ -19,7 +17,6 @@ Główna pętla programu przyjmująca od użytkownika dane wejściowe operacji n
 - 7. Odczyt / Zapis do pliku,
 - 8. Eksport do pliku HTML
 - 9. Wyjście z programu
-
 
 W module tym należało by zaprogramować system interakcji który będzie reagował na polecone mu zadania i odsyłał do odpowiednich funkcji. System powinien być odporny na niepoprawne dane np. Stringi zamiast liczby oraz zwracać komunikat błędu gdy zostanie podana liczba która nie ma przypisanej operacji. Po każdej wykonanej akcji powinno zostać wykonane przeładowanie widoku za pomocą funkcji reloadView().
 
@@ -65,7 +62,6 @@ Dodatkowo jest do zaimplementowania funkcjonalność backupu - odczytu i zapisu 
 Klasa seat powinna być dziedziczona dla poszczególnych typów siedzien i domyślnie mieć inne cechy jak nazwa i cena miejsca. 
 Dla klasy VIP cena to 1000zl, dla klasy Disabled cena to 250zl, a dla klasy Standard cena to 370zl. Siedzenia powinny być łączone funkcja reserveSeat() z dana osoba i wpisywać do składnika TicketOwner tylko wskaźnik do danej osoby (obiektu Person z listy osób). Funkcja ta powinna zwracać powodzenie lub porażkę takowej akcji. Np. False gdy osoba jest na czarnej liście, nie była szczepiona na COVID lub nie ma skończonych 18 lat. Po wykonaniu takowej operacji obiekt menu powinien wykonać przeładowanie widoku by pokazać czy coś się zmieniło czy nie. W celu sprawdzenia czy miejsce jest zajęte czy nie funkcja isBusy() powinna zwracać prawdę jeżeli miejsce jest zajęte i fałsz jeżeli jest wolne (sprawdzenie czy TicketOwner zawiera jakiś niepusty wskaźnik)
 
-
 ### Moduł Person
 Obiekt powinien zawierać imię, nazwisko, liczbę posiadanych miejsc, nr telefonu, e-mail, numer dokumentu w formacie np. MXM900303 (dla przykładu zamiast numeru pesel. Numer po literce to data urodzenia) oraz czy dany człowiek był szczepiony na COVID. Funkcja getAge() powinna zwracać wiek osoby na podstawie numeru paszportu.
  
@@ -75,7 +71,7 @@ Obiekt powinien logować wszystkie wydarzenia wykonane przez system i dopisywać
 ### Podsumowanie
 Wstępna wersja demonstracyjna obejmuje ubogą implementacje do rozbudowy. Jestem otwarty na zmianę koncepcji i naukę nowych rozwiązań więc jeśli masz jakiś ciekawy pomysł to pisz śmiało ;););)
 
-## Link do kodu:
+### Link do kodu:
 https://github.com/piotrku91/stadium-system-res
 
 ### Zapraszam do forkowania, dyskusji i rozbudowy ;)
